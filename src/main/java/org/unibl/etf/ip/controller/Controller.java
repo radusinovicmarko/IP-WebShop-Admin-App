@@ -100,6 +100,24 @@ public class Controller extends HttpServlet {
 						}
 						categoryBean.add();
 					}
+				} else if (action.equals("updateCategory")) {
+					CategoryBean categoryBean = (CategoryBean) session.getAttribute("categoryBean");
+					if (request.getParameter("id") != null) {
+						int id = Integer.parseInt(request.getParameter("id"));
+						address = "WEB-INF/pages/updateCategory.jsp";
+						if (!categoryBean.getById(id))
+							address = "WEB-INF/pages/categories.jsp";
+					} else {
+						String name = request.getParameter("name");
+						if (name == null) {
+							address = "WEB-INF/pages/categories.jsp";
+						} else {
+							int id = categoryBean.getUpdateCategory().getId();
+							int parentId = categoryBean.getUpdateCategory().getParentId();
+							categoryBean.update(id, new Category(id, name, parentId));
+							address = "WEB-INF/pages/categories.jsp";
+						}
+					}
 				} else if (action.equals("deleteCategory")) {
 					if (request.getParameter("id") == null) {
 						address = "/WEB-INF/pages/categories.jsp";
@@ -149,13 +167,10 @@ public class Controller extends HttpServlet {
 						String location = request.getParameter("location");
 						if (firstName == null || lastName == null || username == null || email == null
 								|| contactPhone == null || location == null) {
-							System.out.println(firstName + " " + lastName + " " + username);
 							address = "WEB-INF/pages/users.jsp";
 						} else {
-							System.out.println(1);
 							boolean activated = request.getParameter("activated") == null ? false : true;
 							boolean deleted = request.getParameter("deleted") == null ? false : true;
-							System.out.println(userBean.getUser().getId());
 							userBean.update(userBean.getUser().getId(),
 									new User(userBean.getUser().getId(), firstName, lastName, username, "", avatarURL,
 											email, activated, contactPhone, location, deleted),

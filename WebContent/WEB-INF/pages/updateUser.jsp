@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page errorPage="error.jsp" %>
 <jsp:useBean id="userBean" type="org.unibl.etf.ip.model.beans.UserBean" scope="session"></jsp:useBean>
 <!DOCTYPE html>
 <html>
@@ -21,15 +22,15 @@
 		<h4>Promjena podataka</h4>
 		<form action="Controller?action=updateUser" method="post">
 			<div class="mb-3 mt-3">
-				<input type="text" class="form-control" value=<%= userBean.getUser().getFirstName() %>
+				<input type="text" class="form-control" value="<%= userBean.getUser().getFirstName() %>"
 					placeholder="Ime" name="firstName" required />
 			</div>
 			<div class="mb-3 mt-3">
-				<input type="text" class="form-control" value=<%= userBean.getUser().getLastName() %>
+				<input type="text" class="form-control" value="<%= userBean.getUser().getLastName() %>"
 					placeholder="Prezime" name="lastName" required />
 			</div>
 			<div class="mb-3 mt-3">
-				<input type="text" class="form-control" value=<%= userBean.getUser().getUsername() %>
+				<input type="text" class="form-control" value="<%= userBean.getUser().getUsername() %>"
 				placeholder="Korisničko ime" name="username" required />
 			</div>
 			<div class="mb-3 mt-3">
@@ -38,18 +39,18 @@
 			</div>
 			<div class="mb-3 mt-3">
 				<input type="url" class="form-control" placeholder="Avatar URL" name="avatarUrl" 
-					<%= userBean.getUser().getAvatarUrl() == null ? "" : "value=" + userBean.getUser().getAvatarUrl()  %>/>
+					<%= userBean.getUser().getAvatarUrl() == null ? "" : "value='" + userBean.getUser().getAvatarUrl() + "'"  %>/>
 			</div>
 			<div class="mb-3 mt-3">
-				<input type="email" class="form-control" value=<%= userBean.getUser().getEmail() %>
+				<input type="email" class="form-control" value="<%= userBean.getUser().getEmail() %>"
 					placeholder="E-mail" name="email" required />
 			</div>
 			<div class="mb-3">
-				<input type="text" min="1" class="form-control" value=<%= userBean.getUser().getContactPhone() %>
+				<input type="text" class="form-control" value="<%= userBean.getUser().getContactPhone() %>"
 					placeholder="Telefon" name="contactPhone" required />
 			</div>
 			<div class="mb-3 mt-3">
-				<input type="text" class="form-control" value=<%= userBean.getUser().getLocation() %>
+				<input type="text" class="form-control" value="<%= userBean.getUser().getLocation() %>"
 					placeholder="Grad" name="location" required />
 			</div>
 			<div class="mb-3 mt-3">

@@ -1,6 +1,7 @@
 <%@page import="org.unibl.etf.ip.model.dto.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page errorPage="error.jsp" %>
 <jsp:useBean id="userBean" type="org.unibl.etf.ip.model.beans.UserBean" scope="session"/>
 <!DOCTYPE html>
 <html>
@@ -55,15 +56,15 @@
 							<td><%= user.getLocation() %></td>
 							<td><input class="form-check-input" type="checkbox" <%= user.isDeleted() ? "checked" : "" %> disabled /></td>
 							<td class="action-cell">
-								<button type="button" class="btn btn-primary" onclick=<%= "location.href=\"Controller?action=updateUser&id=" + user.getId() + "\"" %>>Promijenite</button>
-								<button type="button" class="btn btn-primary" onclick=<%= "location.href=\"Controller?action=deleteUser&id=" + user.getId() + "\"" %>>Obrišite</button>
+								<a class="btn btn-primary" href=<%= "\"Controller?action=updateUser&id=" + user.getId() + "\"" %>>Promijenite</a>
+								<a class="btn btn-primary" href=<%= "\"Controller?action=deleteUser&id=" + user.getId() + "\"" %>>Obrišite</a>
 							</td>
 						</tr>
 					<% } %>
 				</tbody>
 			</table>
 		</div>
-		<button type="button" class="btn btn-primary" onclick="location.href='Controller?action=addUser'">Dodajte</button>
+		<a class="btn btn-primary" href="Controller?action=addUser">Dodajte</a>
 	</div>
 </body>
 </html>

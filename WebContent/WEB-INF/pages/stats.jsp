@@ -1,6 +1,8 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="org.unibl.etf.ip.model.dto.Log"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page errorPage="error.jsp" %>
 <jsp:useBean id="statsBean" type="org.unibl.etf.ip.model.beans.StatsBean" scope="session"></jsp:useBean>
 <!DOCTYPE html>
 <html>
@@ -35,7 +37,7 @@
 						<tr>
 							<td class=<%= "ERROR".equals(log.getLevel()) ? "table-danger" : "table-info" %>><%= log.getLevel() %></td>
 							<td><%= log.getLogger() %></td>
-							<td><%= log.getDated() %></td>
+							<td><%= new SimpleDateFormat("dd.MM.yyyy. HH:mm:ss").format(log.getDated()) %></td>
 							<td><%= log.getMessage() %></td>
 						</tr>
 					<% } %>

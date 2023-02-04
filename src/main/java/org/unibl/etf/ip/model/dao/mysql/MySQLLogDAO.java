@@ -11,7 +11,7 @@ import org.unibl.etf.ip.model.dto.Log;
 
 public class MySQLLogDAO {
 	
-	private static final String GET_ALL = "select * from logs order by dated desc";
+	private static final String GET_ALL = "select * from logs order by dated desc limit 100";
 
 	public List<Log> getAll() {
 		Connection connection = null;

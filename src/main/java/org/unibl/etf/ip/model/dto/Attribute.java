@@ -1,7 +1,11 @@
 package org.unibl.etf.ip.model.dto;
 
-public class Attribute {
+import java.io.Serializable;
+
+public class Attribute implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
+
 	private Integer id;
 	
 	private String name;

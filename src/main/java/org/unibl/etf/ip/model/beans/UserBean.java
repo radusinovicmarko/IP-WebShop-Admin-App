@@ -34,7 +34,7 @@ public class UserBean implements Serializable {
 	}
 	
 	public void update(Integer id, User user, String newPassword) {
-		if (newPassword != null || "".equals(newPassword)) 
+		if (newPassword != null || !"".equals(newPassword)) 
 			user.setPassword(new BCryptPasswordEncoder(10).encode(newPassword));
 		else
 			user.setPassword(this.user.getPassword());

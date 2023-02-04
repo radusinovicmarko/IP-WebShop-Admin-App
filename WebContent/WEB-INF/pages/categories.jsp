@@ -1,6 +1,7 @@
 <%@page import="org.unibl.etf.ip.model.dto.Category"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page errorPage="error.jsp" %>
 <jsp:useBean id="categoryBean" type="org.unibl.etf.ip.model.beans.CategoryBean" scope="session"/>
 <!DOCTYPE html>
 <html>
@@ -37,15 +38,15 @@
 							<td><%= category.getName() %></td>
 							<td><%= category.getParentId() == 0 ? "/" : category.getParentId() %></td>
 							<td class="action-cell">
-								<button type="button" class="btn btn-primary">Promijenite</button>
-								<button type="button" class="btn btn-primary" onclick=<%= "location.href=\"Controller?action=deleteCategory&id=" + category.getId() + "\"" %>>Obrišite</button>
+								<!-- <a class="btn btn-primary" href=<%= "\"Controller?action=updateCategory&id=" + category.getId() + "\"" %>>Promijenite</a>-->
+								<a class="btn btn-primary" href=<%= "\"Controller?action=deleteCategory&id=" + category.getId() + "\"" %>>Obrišite</a>
 							</td>
 						</tr>
 					<% } %>
 				</tbody>
 			</table>
 		</div>
-		<button type="button" class="btn btn-primary" onclick="location.href='Controller?action=addCategory'">Dodajte</button>
+		<a class="btn btn-primary" href="Controller?action=addCategory">Dodajte</a>
 	</div>
 </body>
 </html>

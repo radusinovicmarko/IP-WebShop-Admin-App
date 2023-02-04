@@ -1,6 +1,7 @@
 <%@page import="org.unibl.etf.ip.model.dto.Category"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page errorPage="error.jsp" %>
 <jsp:useBean id="categoryBean" type="org.unibl.etf.ip.model.beans.CategoryBean" scope="session"/>
 <!DOCTYPE html>
 <html>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page errorPage="error.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,7 +45,7 @@
 					placeholder="E-mail" name="email" required />
 			</div>
 			<div class="mb-3">
-				<input type="text" min="1" class="form-control"
+				<input type="text" class="form-control"
 					placeholder="Telefon" name="contactPhone" required />
 			</div>
 			<div class="mb-3 mt-3">
