@@ -53,7 +53,7 @@
 			<div class="mb-3">
 				<label class="form-label">Telefon:</label>
 				<input type="text" class="form-control" value="<%= userBean.getUser().getContactPhone() %>"
-					placeholder="Telefon" name="contactPhone" required />
+					placeholder="Telefon" name="contactPhone" required pattern="[0-9]{3}/[0-9]{3}-[0-9]{3}" />
 			</div>
 			<div class="mb-3 mt-3">
 				<label class="form-label">Grad:</label>

@@ -46,7 +46,7 @@
 			</div>
 			<div class="mb-3">
 				<label class="form-label">Telefon: *</label> <input type="text"
-					class="form-control" name="contactPhone" required />
+					class="form-control" name="contactPhone" required pattern="[0-9]{3}/[0-9]{3}-[0-9]{3}"/>
 			</div>
 			<div class="mb-3 mt-3">
 				<label class="form-label">Grad: *</label> <input type="text"
