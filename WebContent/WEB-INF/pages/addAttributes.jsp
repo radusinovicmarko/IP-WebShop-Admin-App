@@ -30,7 +30,7 @@
 			<div class="mb-3 mt-3">
 				<select class="form-select" required name=<%= "type" + i %>>
 					<option value="String">String</option>
-					<option value="Integer">Broj</option>
+					<option value="Number">Broj</option>
 				</select>
 			</div>
 			<hr />
