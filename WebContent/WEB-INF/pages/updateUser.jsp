@@ -22,34 +22,41 @@
 		<h4>Promjena podataka</h4>
 		<form action="Controller?action=updateUser" method="post">
 			<div class="mb-3 mt-3">
+				<label class="form-label">Ime:</label>
 				<input type="text" class="form-control" value="<%= userBean.getUser().getFirstName() %>"
 					placeholder="Ime" name="firstName" required />
 			</div>
 			<div class="mb-3 mt-3">
+				<label class="form-label">Prezime:</label>
 				<input type="text" class="form-control" value="<%= userBean.getUser().getLastName() %>"
 					placeholder="Prezime" name="lastName" required />
 			</div>
 			<div class="mb-3 mt-3">
+				<label class="form-label">Korisničko ime:</label>
 				<input type="text" class="form-control" value="<%= userBean.getUser().getUsername() %>"
 				placeholder="Korisničko ime" name="username" required />
 			</div>
 			<div class="mb-3 mt-3">
-				<input type="password" class="form-control"
-					placeholder="Nova lozinka" name="password" />
+				<label class="form-label">Nova lozinka:</label>
+				<input type="password" class="form-control" name="password" />
 			</div>
 			<div class="mb-3 mt-3">
-				<input type="url" class="form-control" placeholder="Avatar URL" name="avatarUrl" 
+				<label class="form-label">Avatar URL:</label>
+				<input type="url" class="form-control" name="avatarUrl" 
 					<%= userBean.getUser().getAvatarUrl() == null ? "" : "value='" + userBean.getUser().getAvatarUrl() + "'"  %>/>
 			</div>
 			<div class="mb-3 mt-3">
+				<label class="form-label">E-mail adresa:</label>
 				<input type="email" class="form-control" value="<%= userBean.getUser().getEmail() %>"
 					placeholder="E-mail" name="email" required />
 			</div>
 			<div class="mb-3">
+				<label class="form-label">Telefon:</label>
 				<input type="text" class="form-control" value="<%= userBean.getUser().getContactPhone() %>"
 					placeholder="Telefon" name="contactPhone" required />
 			</div>
 			<div class="mb-3 mt-3">
+				<label class="form-label">Grad:</label>
 				<input type="text" class="form-control" value="<%= userBean.getUser().getLocation() %>"
 					placeholder="Grad" name="location" required />
 			</div>

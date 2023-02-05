@@ -24,10 +24,12 @@
 		<form action="Controller?action=addAttributes" method="post">
 			<% for (int i = 0; i < (int) session.getAttribute("noAttributes"); i++) { %>
 			<div class="mb-3 mt-3">
+				<label class="form-label">Naziv: *</label>
 				<input type="text" class="form-control" id="username"
-					placeholder="Naziv" name=<%= "name" + i %> required />
+					name=<%= "name" + i %> required />
 			</div>
 			<div class="mb-3 mt-3">
+				<label class="form-label">Tip: *</label>
 				<select class="form-select" required name=<%= "type" + i %>>
 					<option value="String">String</option>
 					<option value="Number">Broj</option>

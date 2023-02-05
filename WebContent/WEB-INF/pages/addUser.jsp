@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page errorPage="error.jsp" %>
+<%@ page errorPage="error.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,36 +21,36 @@
 		<h4>Novi korisnik</h4>
 		<form action="Controller?action=addUser" method="post">
 			<div class="mb-3 mt-3">
-				<input type="text" class="form-control"
-					placeholder="Ime" name="firstName" required />
+				<label class="form-label">Ime: *</label> <input type="text"
+					class="form-control" name="firstName" required />
 			</div>
 			<div class="mb-3 mt-3">
-				<input type="text" class="form-control"
-					placeholder="Prezime" name="lastName" required />
+				<label class="form-label">Prezime: *</label> <input type="text"
+					class="form-control" name="lastName" required />
 			</div>
 			<div class="mb-3 mt-3">
-				<input type="text" class="form-control"
-					placeholder="Korisničko ime" name="username" required />
+				<label class="form-label">Korisničko ime: *</label> <input type="text"
+					class="form-control" name="username" required />
 			</div>
 			<div class="mb-3 mt-3">
-				<input type="password" class="form-control"
-					placeholder="Lozinka" name="password" required />
+				<label class="form-label">Lozinka: *</label> <input type="password"
+					class="form-control" name="password" required />
 			</div>
 			<div class="mb-3 mt-3">
-				<input type="url" class="form-control"
-					placeholder="Avatar URL" name="avatarUrl" />
+				<label class="form-label">Avatar URL:</label> <input type="url"
+					class="form-control" name="avatarUrl" />
 			</div>
 			<div class="mb-3 mt-3">
-				<input type="email" class="form-control"
-					placeholder="E-mail" name="email" required />
+				<label class="form-label">E-mail adresa: *</label> <input type="email"
+					class="form-control" name="email" required />
 			</div>
 			<div class="mb-3">
-				<input type="text" class="form-control"
-					placeholder="Telefon" name="contactPhone" required />
+				<label class="form-label">Telefon: *</label> <input type="text"
+					class="form-control" name="contactPhone" required />
 			</div>
 			<div class="mb-3 mt-3">
-				<input type="text" class="form-control"
-					placeholder="Grad" name="location" required />
+				<label class="form-label">Grad: *</label> <input type="text"
+					class="form-control" name="location" required />
 			</div>
 			<button type="submit" class="btn btn-primary">Dodajte</button>
 		</form>

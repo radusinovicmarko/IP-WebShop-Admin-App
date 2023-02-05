@@ -23,10 +23,12 @@
 		<h4>Nova kategorija</h4>
 		<form action="Controller?action=addCategory" method="post">
 			<div class="mb-3 mt-3">
+				<label class="form-label">Naziv: *</label>
 				<input type="text" class="form-control" id="username"
-					placeholder="Naziv" name="name" required />
+					name="name" required />
 			</div>
 			<div class="mb-3 mt-3">
+				<label class="form-label">Natkategorija: *</label>
 				<select class="form-select" required name="parentId">
 					<option value="0">/</option>
 					<% for (Category category : categoryBean.getAll()) { %>
@@ -35,8 +37,9 @@
 				</select>
 			</div>
 			<div class="mb-3">
+				<label class="form-label">Broj atributa: *</label>
 				<input type="number" min="1" class="form-control"
-					placeholder="Broj atributa" name="noAttributes" required />
+					name="noAttributes" required />
 			</div>
 			<button type="submit" class="btn btn-primary">Dalje</button>
 		</form>
